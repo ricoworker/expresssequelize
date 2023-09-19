@@ -1,6 +1,8 @@
 const Router = require('express').Router();
-const addProduct = require('../controllers');
+const productRoutes = require('./ProductRoute');
+const categoryRoutes = require('./CategoryRoute');
 
-Router.use('/addproduct', addProduct);
+Router.use('/product', productRoutes);
+Router.use('/category', categoryRoutes);
 
 module.exports = Router;
