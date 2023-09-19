@@ -28,4 +28,8 @@ db.tutorials = require('./tutorial.model.js')(sequelize, Sequelize);
 db.products = require('./product.models')(sequelize, Sequelize);
 db.category = require('./category.model')(sequelize, Sequelize);
 
+// db.products.associate = db.products.belongsTo(db.category, {
+//   foreignKey: 'category',
+// });
+
 module.exports = db;
