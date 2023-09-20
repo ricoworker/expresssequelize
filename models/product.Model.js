@@ -1,5 +1,3 @@
-const Category = require('./category.model');
-
 module.exports = (sequelize, Sequelize) => {
   const Products = sequelize.define('products', {
     id: {
@@ -20,12 +18,14 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: false,
     },
   });
-  const CategoryModel = Category(sequelize, Sequelize);
 
   // Define the association
   // Products.belongsTo(CategoryModel, {
   //   foreignKey: 'categoryId', // The foreign key in the Products table
   //   as: 'category', // Alias for the association
   // });
-  // return Products;
+
+
+
+  return Products;
 };

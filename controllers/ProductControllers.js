@@ -1,6 +1,5 @@
 const db = require('../models');
 const Product = db.products;
-const Category = db.category;
 
 const addProduct = async (req, res) => {
   try {
@@ -19,10 +18,7 @@ const addProduct = async (req, res) => {
 const getAllProduct = async (req, res) => {
   try {
     const allProduct = await Product.findAll({
-      include: {
-        model: Category,
-        as: 'category', // Use the alias specified in the association
-      },
+      include: ['category makanan'],
     });
     res.status(200).json(allProduct);
   } catch (error) {
